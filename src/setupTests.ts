@@ -32,15 +32,6 @@ const localStorage = {
   track: jest.fn()
 };
 
-jest.mock('applicationinsights-js', () => {
-  return {
-    AppInsights: {
-      downloadAndSetup: jest.fn(),
-      trackException: jest.fn()
-    }
-  };
-});
-
 jest.mock('raven-js', () => {
   return {
     config: jest.fn().mockReturnValue({
